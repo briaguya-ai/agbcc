@@ -62,7 +62,7 @@ jobs:
           brew install arm-none-eabi-binutils arm-none-eabi-gcc
 
       - name: Compile
-        run: CC=gcc-${{matrix.gcc-version}} CXX=${{matrix.gcc-version}} sh build.sh
+        run: CC=gcc-${{matrix.gcc-version}} CXX=g++-${{matrix.gcc-version}} sh build.sh
 
       # No point in running the following steps if we are not deploying
       # See https://github.com/actions/runner/issues/1395 for why fromJSON() is needed
