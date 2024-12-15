@@ -54,12 +54,12 @@ jobs:
         if: ${{ matrix.os == 'ubuntu-22.04' || matrix.os == 'ubuntu-24.04' }} 
         run: |
           sudo apt update
-          sudo apt install gcc-${{matrix.gcc-version}} g++-${{matrix.gcc-version}} gcc-arm-none-eabi binutils-arm-none-eabi
+          sudo apt install gcc-arm-none-eabi binutils-arm-none-eabi
 
       - name: Install deps (Mac)
         if: ${{ matrix.os == 'macos-14' }}
         run: |
-          brew install gcc@${{matrix.gcc-version}} arm-none-eabi-binutils arm-none-eabi-gcc
+          brew install arm-none-eabi-binutils arm-none-eabi-gcc
 
       - name: Compile
         run: CC=gcc-${{matrix.gcc-version}} CXX=${{matrix.gcc-version}} sh build.sh
