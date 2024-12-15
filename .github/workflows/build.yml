@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ master, testit ]
+    branches: [ testit ]
   pull_request:
 
 # Note, Github Actions is dumb and only steps - not jobs - can access env.
